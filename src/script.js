@@ -8,7 +8,7 @@ const scene = new THREE.Scene()
 
 // add objects to the scene
 const cubeGeometry = new THREE.BoxGeometry(1,1,1)
-const cubeMaterial = new THREE.MeshBasicMaterial({color: "red"})
+const cubeMaterial = new THREE.MeshBasicMaterial({color: "blue"})
 
 const cubeMesh = new THREE.Mesh(
   cubeGeometry,
@@ -17,24 +17,24 @@ const cubeMesh = new THREE.Mesh(
 scene.add(cubeMesh)
 
 // initialize the camera
-// const camera = new THREE.PerspectiveCamera(
-//   35, 
-//   window.innerWidth / window.innerHeight,
-//   0.1,
-//   200)
+const camera = new THREE.PerspectiveCamera(
+  35, 
+  window.innerWidth / window.innerHeight,
+  0.1,
+  200)
 
 
 // Orthographic Camera
-const aspectRatio = window.innerWidth / window.innerHeight
+// const aspectRatio = window.innerWidth / window.innerHeight
 
-const camera = new THREE.OrthographicCamera(
-  -1 *aspectRatio,
-  1 *aspectRatio,
-  1,
--1,
-0.1,
-200
-)
+// const camera = new THREE.OrthographicCamera(
+//   -1 *aspectRatio,
+//   1 *aspectRatio,
+//   1,
+// -1,
+// 0.1,
+// 200
+// )
 
 
 
@@ -45,6 +45,7 @@ const canvas = document.querySelector('canvas.threejs')
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas
 })
+renderer.setClearColor(new THREE.Color('white'))
 renderer.setSize(window.innerWidth, window.innerHeight)
 // instantiate the controls
 const controls = new OrbitControls( camera, canvas );
