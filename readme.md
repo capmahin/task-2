@@ -103,3 +103,4 @@ This project serves as an excellent foundation for:
 - Experimenting with advanced Three.js features
 
 The modular structure makes it easy to extend with additional geometries, textures, animations, or post-processing effects.
+For further customization, you can modify the scene, lighting, and material properties in the `src/script.js` file.
